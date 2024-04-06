@@ -1,19 +1,29 @@
+import java.util.Scanner;
+
 public class TitleScreen {
     public static void main(String[] args) {
 
-        // Choose difficulty level based on user input or configuration
-        String difficulty = "easy";  // Example: read from command line args or config
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Welcome to Minesweeper!");
+        System.out.println("Choose a difficulty level:");
+        System.out.println("1. Easy");
+        System.out.println("2. Medium");
+        System.out.println("3. Hard");
+        System.out.print("Enter your choice: ");
+
+        int choice = scanner.nextInt();
 
         // Instantiate appropriate factory based on difficulty
         GameFactory factory;
-        switch (difficulty) {
-            case "easy":
+        switch (choice) {
+            case 1:
                 factory =  new EasyMode();
                 break;
-            case "medium":
+            case 2:
                 factory = new NormalMode();
                 break;
-            case "hard":
+            case 3:
                 factory = new HardMode();
                 break;
             default:
