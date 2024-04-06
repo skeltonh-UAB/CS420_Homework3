@@ -7,23 +7,23 @@ public class TitleScreen {
 
         System.out.println("Welcome to Minesweeper!");
         System.out.println("Choose a difficulty level:");
-        System.out.println("1. Easy");
-        System.out.println("2. Medium");
-        System.out.println("3. Hard");
+        System.out.println("1. easy");
+        System.out.println("2. normal");
+        System.out.println("3. hard");
         System.out.print("Enter your choice: ");
 
-        int choice = scanner.nextInt();
+        String choice = scanner.next();
 
         // Instantiate appropriate factory based on difficulty
         GameFactory factory;
         switch (choice) {
-            case 1:
+            case "easy":
                 factory =  new EasyMode();
                 break;
-            case 2:
+            case "normal":
                 factory = new NormalMode();
                 break;
-            case 3:
+            case "hard":
                 factory = new HardMode();
                 break;
             default:
